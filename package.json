@@ -1,0 +1,33 @@
+{
+  "name": "trame-studio",
+  "productName": "Trame Studio",
+  "version": "1.0.0",
+  "description": "Outil auteur e-learning : scènes, déclencheurs, variables, questions et export HTML / SCORM 1.2 (version bureau).",
+  "main": "electron/main.js",
+  "license": "MIT",
+  "scripts": {
+    "desktop": "electron .",
+    "build:win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^44.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.tramestudio.app",
+    "productName": "Trame Studio",
+    "npmRebuild": false,
+    "files": [
+      "electron/**",
+      "app/**",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
